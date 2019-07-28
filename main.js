@@ -32,8 +32,8 @@ Using Filter
 Create a function called longerAndYounger
 that takes an array of objects and 2 numbers as a parameter
 and return a new array with the object has 
-a name longer than the first parameter
-and in the same time less than the second parameters 
+a name longer than the second parameter
+and in the same time the age less than the third parameter 
 
 var arrOfObj1 = [
   { name: "alex" ,age:22},
