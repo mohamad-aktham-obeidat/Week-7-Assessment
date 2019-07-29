@@ -23,9 +23,22 @@ Output =>
 
 */
 
-function MultiByNum1OrNum2() {
-  // WRITE YOUR CODE UNDER THIS LINE         
+function MultiByNum1OrNum2(arr, num1, num2) {
+  // WRITE YOUR CODE UNDER THIS LINE
+  let result = [];
+  arr.map(element => {
+    if (element % num1 === 0) {
+      result.push(element * num1)
+    } else {
+      result.push(element * num2);
+    }
+  })
+  return result;
 }
+console.log('Q1 Solution: ')
+console.log(MultiByNum1OrNum2([1, 5, 2], 2, 6));
+console.log(MultiByNum1OrNum2([7, 2, 50], 7, 10));
+console.log('______________________________________________________________')
 
 /* Q2:
 Using Filter
@@ -57,10 +70,37 @@ Output =>
   { name: "mercer",age:26}
 ]
 */
+var arrOfObj1 = [{
+    name: "alex",
+    age: 22
+  },
+  {
+    name: "mercer",
+    age: 26
+  },
+  {
+    name: "alice",
+    age: 33
+  },
+  {
+    name: "zaheer",
+    age: 35
+  },
+  {
+    name: "elizabeth",
+    age: 45
+  }
+]
 
-function longerAndYounger() {
-  // WRITE YOUR CODE UNDER THIS LINE         
+function longerAndYounger(arrOfObject, num1, num2) {
+  // WRITE YOUR CODE UNDER THIS LINE
+  return arrOfObject.filter(element => element.name.length > num1 && element.age < num2);
+
 }
+console.log('Q2 Solution: ')
+console.log(longerAndYounger(arrOfObj1, 4, 30));
+console.log(longerAndYounger(arrOfObj1, 3, 30));
+console.log('______________________________________________________________')
 
 /* Q3:
 Using Reduce
@@ -89,9 +129,38 @@ Output =>
 "alice, fried chiken, pizaa, burger, hot dog, eggs"
   
 */
-function nameAndAllFoods() {
-  // WRITE YOUR CODE UNDER THIS LINE         
+var arrOfObj2 = [{
+    name: "alex",
+    food: "fried chiken"
+  },
+  {
+    name: "mercer",
+    food: "pizaa"
+  },
+  {
+    name: "alice",
+    food: "burger"
+  },
+  {
+    name: "zaheer",
+    food: "hot dog"
+  },
+  {
+    name: "elizabeth",
+    food: "eggs"
+  }
+]
+
+function nameAndAllFoods(arrOfObject2, num1) {
+  // WRITE YOUR CODE UNDER THIS LINE
+  return arrOfObject2.reduce((acc, current) => {
+    return acc + ', ' + current.food;
+  }, arrOfObj2[num1].name);
 }
+console.log('Q3 Solution: ')
+console.log(nameAndAllFoods(arrOfObj2, 0));
+console.log(nameAndAllFoods(arrOfObj2, 2));
+console.log('______________________________________________________________')
 
 
 /*
